@@ -1,20 +1,20 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Hero } from '../components/Hero'
+import { HeroComponent } from '../components/Hero'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col items-center">
       <Head>
         <title>Great Commision Church</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+      <main className="flex w-full flex-1 flex-col items-center text-center">
 
         {/* Hero */}
-          <Hero />
+          <HeroComponent />
         {/* Quick Links */}
 
         {/* Sermon Section */}

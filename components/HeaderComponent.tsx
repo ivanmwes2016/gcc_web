@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { data } from './data'
-import Link from 'next/link'
 import styled from 'styled-components'
-import gcm_logo from '../public/LOGO_GCM.png'
 import { MenuIcon } from '@heroicons/react/outline'
 import { ButtonComponent } from './button'
 
@@ -33,8 +31,6 @@ const NavHeader = styled.div`
         width: 83%;
         justify-content: center;
         align-items: center;
- 
-
     }
 
     li{

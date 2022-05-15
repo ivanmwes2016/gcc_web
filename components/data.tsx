@@ -4,7 +4,8 @@ import {
     BookOpenIcon,
     InformationCircleIcon,
     CalendarIcon,
-    GlobeIcon
+    GlobeIcon,
+    
  } from '@heroicons/react/outline'
 import { HtmlProps } from "next/dist/shared/lib/html-context";
 
@@ -21,11 +22,14 @@ interface IHero{
     image:string
 }
 
+
+
 //Interface for the Menu data.
 interface IData{
     MenuItems: IMenu[]
     Logo: string
     Hero:IHero[]
+    SocialMediaIcons:IMenu[]
 }
 
 
@@ -75,11 +79,23 @@ export const data:IData = {
     Hero:[
         {
             title:'Welcome Home',
-            description:'Have you ever wondered what it feels like to be part of a global community?',
+            description:'Have you ever wondered what it feels like to be part of a global community? In these uprecendented times, we need to stay connected and build each other up. There has been never been a better time to find your familiy and get plugged in',
             image:'#'
+        },
+    ],
+
+    SocialMediaIcons:[
+        {
+            name:'facebook',
+            url:'facebook',
+            icon:<GlobeIcon />
         }
+
     ]
+
 }
+
+
 
 
 
