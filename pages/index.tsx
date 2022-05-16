@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import CardContainer from '../components/CardOne'
+
 import { HeroComponent } from '../components/Hero'
 
 const Home: NextPage = () => {
@@ -15,7 +17,7 @@ const Home: NextPage = () => {
 
         {/* Hero */}
           <HeroComponent />
-        {/* Quick Links */}
+        <CardContainer />
 
         {/* Sermon Section */}
 

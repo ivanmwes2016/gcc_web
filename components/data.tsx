@@ -7,7 +7,6 @@ import {
     GlobeIcon,
     
  } from '@heroicons/react/outline'
-import { HtmlProps } from "next/dist/shared/lib/html-context";
 
 
 interface IMenu{
@@ -22,6 +21,16 @@ interface IHero{
     image:string
 }
 
+interface Icard{
+    title:string,
+    description:string,
+    image:string,
+    alt:string,
+    LinkName:string
+    url:string,
+
+}
+
 
 
 //Interface for the Menu data.
@@ -30,6 +39,8 @@ interface IData{
     Logo: string
     Hero:IHero[]
     SocialMediaIcons:IMenu[]
+    CardOne:Icard[]
+    
 }
 
 
@@ -89,9 +100,43 @@ export const data:IData = {
             name:'facebook',
             url:'facebook',
             icon:<GlobeIcon />
-        }
+        },
 
+    ],
+
+    CardOne:[
+        {
+            title:'Visiting Great Commission?',
+            description:'We cant waint to weclome you in person. Great Commission Church is all about people.',
+            image:'/bg-bg.jpg',
+            alt:"visiting great commission",
+            LinkName:"Plan your visit",
+            url:"#"
+        },
+
+        {
+            title:"Children's Ministry",
+            description:'We cant waint to weclome you in person. Great Commission Church is all about people.',
+            image:'/bg-bg.jpg',
+            alt:"children's ministry",
+            LinkName:"Learn More",
+            url:"#"
+
+        },
+
+        {
+            title:"Let's Connect!",
+            description:'We cant waint to weclome you in person. Great Commission Church is all about people.',
+            image:'/bg-bg.jpg',
+            alt:"connect",
+            LinkName:"Learn More",
+            url:"#"
+
+        },
     ]
+
+
+
 
 }
 

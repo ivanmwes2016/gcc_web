@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { data } from './data'
-import styled from 'styled-components'
 import { MenuIcon } from '@heroicons/react/outline'
-import { ButtonComponent } from './button'
+import ButtonComponent from './button'
+import styled from 'styled-components'
+
 
 
 const NavHeader = styled.div`
@@ -80,9 +81,9 @@ export const HeaderComponent = ({title}:Props) => {
                 ))}
             </ul>
 
-            <ButtonComponent title={'GIVE'} isPrimary={false} />
+            <ButtonComponent title={'GIVE'} isOutline={false} />
 
-            <ButtonComponent title={'CONTACT'} isPrimary={true} />
+            <ButtonComponent title={'CONTACT'} isOutline={true} />
 
             <MenuIcon className='w-10 h-10 inline lg:hidden stroke-1 stroke-sky-900 ' />
 

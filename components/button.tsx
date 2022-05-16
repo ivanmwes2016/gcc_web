@@ -1,10 +1,13 @@
-import { title } from 'process'
+
 import React from 'react'
+import {ArrowCircleRightIcon} from '@heroicons/react/solid'
 import styled, { css } from 'styled-components'
 
 interface Props{
-    isPrimary:boolean,
+    isOutline?:boolean,
+    isTextButton?:boolean,
     title:string
+    
 }
 
 const Button = styled.button<Props>`
@@ -16,21 +19,57 @@ const Button = styled.button<Props>`
     border-radius: 20px;
     border-width: 1.5px;
 
-   ${props => props.isPrimary?
+   ${props => !props.isOutline? 
         
         css`
             background-color: #019dae;
             color: white;
             border-color:#019dae;
+            .arrow{
+                display: none;
+            }
             
         `:
         css`
             color: '#019dae';
             border-color:#fe6716;
+            .arrow{
+                display: none;
+            }
         `
-    }    
+    };
+
+    ${props => props.isTextButton?
+       
+        css`
+            .arrow{
+                display: inline;
+            };
+            color: #ff8400;
+            padding:0 ;
+            border: none;
+            background-color: rgba(0,0,0,0);
+            
+        `
+        
+        :
+        css`
+            .arrow{
+                display: none;
+            };
+        `
+    
+
+    }
+
+    
 `
 
-export const ButtonComponent = ({isPrimary,title }:Props) => {
-    return <Button title={title} isPrimary={isPrimary}>{title}</Button>
+const ButtonComponent = ({isOutline, isTextButton,title }:Props) => {
+    return <Button  isOutline={isOutline} isTextButton={isTextButton} title={title}>
+        {title} <span> <ArrowCircleRightIcon className=" arrow w-5 h-5" /> </span>
+        </Button>
 }
+
+
+export default ButtonComponent

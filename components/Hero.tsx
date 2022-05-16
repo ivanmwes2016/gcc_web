@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
-import { ButtonComponent } from './button'
+import ButtonComponent from './button'
 import { data } from './data'
+import styled from 'styled-components'
 
 const Hero = styled.div`
     
@@ -29,20 +29,15 @@ export const HeroComponent = () => {
             
             
             {data.Hero.map(item => (
-                <div>
+                <div key={item.title}>
                     {/* big title */}
                     <p className='text-6xl font-extrabold text-gray-300'>{item.title}</p>
                     {/* small text */}
                     <p className ='text-gray-300 text-lg font-bold py-5'>{item.description}</p>
-                    <ButtonComponent isPrimary={true} title='WATCH US LIVE'/>
+                    <ButtonComponent isOutline={false} title='WATCH US LIVE'/>
                 </div>
                 
             ))}
-
-            
-
-
-            
            
         </Hero>
     )
