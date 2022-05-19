@@ -6,20 +6,25 @@ import styled, { css } from 'styled-components'
 interface Props{
     isOutline?:boolean,
     isTextButton?:boolean,
-    title:string
+    isFontBig?:boolean,
+    title:string,
+    className?:string
     
 }
 
 const Button = styled.button<Props>`
     font-weight: bold;
-    font-size: 12px;
+    font-size: ${props => props.isFontBig? '15px': '12px'};
     padding:8px 0px 8px 0px;
     width:150px;
     margin-left: 20px;
     border-radius: 20px;
     border-width: 1.5px;
 
-   ${props => !props.isOutline? 
+
+   ${props => !props.isOutline?
+        
+        
         
         css`
             background-color: #019dae;
@@ -28,6 +33,7 @@ const Button = styled.button<Props>`
             .arrow{
                 display: none;
             }
+    
             
         `:
         css`
@@ -60,13 +66,11 @@ const Button = styled.button<Props>`
         `
     
 
-    }
-
-    
+    };
 `
 
-const ButtonComponent = ({isOutline, isTextButton,title }:Props) => {
-    return <Button  isOutline={isOutline} isTextButton={isTextButton} title={title}>
+const ButtonComponent = ({isOutline, isTextButton, isFontBig,title }:Props) => {
+    return <Button isOutline={isOutline} isTextButton={isTextButton} title={title} isFontBig={isFontBig}>
         {title} <span> <ArrowCircleRightIcon className=" arrow w-5 h-5" /> </span>
         </Button>
 }

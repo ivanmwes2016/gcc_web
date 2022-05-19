@@ -4,6 +4,7 @@ import Image from 'next/image'
 import CardContainer from '../components/CardOne'
 
 import { HeroComponent } from '../components/Hero'
+import { SermonsSection } from '../components/Sermons'
 
 const Home: NextPage = () => {
   return (
@@ -17,9 +18,14 @@ const Home: NextPage = () => {
 
         {/* Hero */}
           <HeroComponent />
+
+          {/* Quick Links Section */}
         <CardContainer />
 
         {/* Sermon Section */}
+
+          <SermonsSection />
+    
 
         {/* Teams and Groups */}
 

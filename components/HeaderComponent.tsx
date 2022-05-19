@@ -11,9 +11,9 @@ const NavHeader = styled.div`
     top: 0;
     width: 100%;
     background-color: rgb(229 231 235);
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     height: 90px;
     padding-left: 20px;
     padding-right: 20px;
@@ -68,7 +68,7 @@ export const HeaderComponent = ({title}:Props) => {
     const [state, setstate] = useState(null)
 
     return (
-        <NavHeader>
+        <NavHeader className="flex justify-between space-x-8 items-center lg:flex ">
             <img className='w-20 h-20' src='/LOGO_GCM.png' />
             <h2 className='title hidden lg:inline'>{title}</h2>
 

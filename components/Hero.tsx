@@ -15,10 +15,6 @@ const Hero = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    p{
-        width: 800px;
-    }
     
 `
 
@@ -29,11 +25,11 @@ export const HeroComponent = () => {
             
             
             {data.Hero.map(item => (
-                <div key={item.title}>
+                <div key={item.title} className="flex flex-col justify-center items-center">
                     {/* big title */}
                     <p className='text-6xl font-extrabold text-gray-300'>{item.title}</p>
                     {/* small text */}
-                    <p className ='text-gray-300 text-lg font-bold py-5'>{item.description}</p>
+                    <p className ='text-gray-300 text-lg font-bold py-5 w-96 lg:w-4/6'>{item.description}</p>
                     <ButtonComponent isOutline={false} title='WATCH US LIVE'/>
                 </div>
                 

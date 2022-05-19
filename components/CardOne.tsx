@@ -5,11 +5,10 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
     width: 100%;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content:center;
-    align-items: center;
-    
+    align-items: center; */
 `
 
 
@@ -47,7 +46,7 @@ const Container = styled.div`
 const CardContainer = () => {
     return (
 
-        <Wrapper className="py-6 px-6">
+        <Wrapper className=" py-6 px-6 flex flex-col justify-center items-center lg:flex-row">
             
             {data.CardOne.map(item => (
                 <Container key={item.title} className="py-4 rounded-xl m-3">
