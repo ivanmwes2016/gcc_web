@@ -24,8 +24,6 @@ const Button = styled.button<Props>`
 
    ${props => !props.isOutline?
         
-        
-        
         css`
             background-color: #019dae;
             color: white;
@@ -34,7 +32,6 @@ const Button = styled.button<Props>`
                 display: none;
             }
     
-            
         `:
         css`
             color: '#019dae';
@@ -55,17 +52,13 @@ const Button = styled.button<Props>`
             padding:0 ;
             border: none;
             background-color: rgba(0,0,0,0);
-            
         `
-        
         :
         css`
             .arrow{
                 display: none;
             };
         `
-    
-
     };
 `
 

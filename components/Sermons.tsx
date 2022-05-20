@@ -10,9 +10,10 @@ interface ISermons{
     SermonTitle:string,
     description:string
     videoSrc:any
+    isSmallSrn?:boolean
 }
 
-const SermonsWrapper =({SectionTitle, SermonTitle, description, videoSrc}:ISermons) => {
+const SermonsWrapper =({SectionTitle, SermonTitle, description, videoSrc, isSmallSrn}:ISermons) => {
     return(
         <div className="flex flex-col md:flex-row justify-start">
             {/* Infor section */}
@@ -24,11 +25,12 @@ const SermonsWrapper =({SectionTitle, SermonTitle, description, videoSrc}:ISermo
             </div>
 
             {/* Video Section */}
-            <div className='right flex flex-col justify-center items-center md:w-full'>
+            <div className='right flex flex-col justify-center items-center md:w-full md:h-[472px]'>
                 <iframe
                     width="520"
                     height="345"
                     src={videoSrc}
+                    
 
 
                 />
@@ -49,13 +51,19 @@ export const SermonsSection = () => {
     const [isError, setIsError] = useState(false)
     const [url, setUrl] = useState<any>("")
 
+    
+
     useEffect(() => {
         const fetchData = async () => {
             setIsError(false)
             setIsLoading(true)
 
+            const ChannelID = process.env.NEXT_PUBLIC_ChannelId
+            const Key = process.env.NEXT_PUBLIC_Y_KEY
+            
+
             try{
-                const res = await axios('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC1UXAPGt8hjxZ1ZYgWqUQrw&key=AIzaSyAfU2lXuOZnoR8a5y1fq_0LK4LAIx44res&id&order=date&maxResults=12')
+                const res = await axios(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ChannelID}&key=${Key}&id&order=date&maxResults=12`)
                 setUrl(res.data.items[0]["id"])
                 setTitle(res.data.items[0]["snippet"])
             }catch(err){
@@ -72,7 +80,7 @@ export const SermonsSection = () => {
    
     return (
         
-        <div className="w-full bg-cyan-800 text-gray-200 py-6 px-6">
+        <div className="w-full h-[472px] flex-1 items-center bg-cyan-800 text-gray-200 py-8 px-6">
 
             <SermonsWrapper
                 SectionTitle="Latest Sermon"

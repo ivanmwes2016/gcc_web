@@ -23,9 +23,9 @@ interface IHero{
 
 interface Icard{
     title:string,
-    description:string,
+    description?:string,
     image:string,
-    alt:string,
+    alt?:string,
     LinkName:string
     url:string,
 
@@ -40,6 +40,7 @@ interface IData{
     Hero:IHero[]
     SocialMediaIcons:IMenu[]
     CardOne:Icard[]
+    TeamGroups:Icard[]
     
 }
 
@@ -131,11 +132,32 @@ export const data:IData = {
             alt:"connect",
             LinkName:"Learn More",
             url:"#"
+        },
 
+    ],
+
+    TeamGroups:[
+        {
+            title:"Relationship & Marriage",
+            image:"#",
+            LinkName:"View Posts",
+            url:"#"
+        },
+
+        {
+            title:"Register or Volunteer",
+            image:"#",
+            LinkName:"View Posts",
+            url:"#"
+        },
+
+        {
+            title:"View Posts",
+            image:"#",
+            LinkName:"View Posts",
+            url:"#"
         },
     ]
-
-
 
 
 }
