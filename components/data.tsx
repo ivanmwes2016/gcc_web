@@ -7,6 +7,7 @@ import {
     GlobeIcon,
     
  } from '@heroicons/react/outline'
+import { url } from "inspector";
 
 
 interface IMenu{
@@ -20,6 +21,7 @@ interface IHero{
     description:string,
     image?:string
     url?:string
+    buttonDesc?:string
 }
 
 interface Icard{
@@ -46,6 +48,7 @@ interface IData{
     DiversityText:string
     Events:Icard[]
     PrayerText:IHero[]
+    FooterData:IHero[]
 }
 
 
@@ -241,6 +244,56 @@ export const data:IData = {
             description: "There are times when life is overwhelming when all we have is questions. In those moments hope can feel away. The great thing is that prayer shifts our perspective towards the One God who stands ready to listen. No matter what you're facing, we'd love to pray with you.",
             url:"#"
         }
+    ],
+
+    FooterData:[
+        {
+            title:"I Have Decided",
+            description:"If you or a friend have recently made the life-transforming decision to follow Jesus, we want to help you as best as we can.",
+            buttonDesc:"MORE INFO",
+            url:"#"
+
+        },
+
+        {
+            title:"New to Church?",
+            description:"Find more about who we are and what we believe.",
+            buttonDesc:"MORE INFO",
+            url:"#"
+
+        },
+        
+        {
+            title:"Groups",
+            description:"Our groups are relational, personal and informal. Meeting together every week to build friendships to share and process life's experiences.",
+            buttonDesc:"MORE INFO",
+            url:"#"
+
+        },
+
+        {
+            title:"Mental Health and Wellbeing",
+            description:"Content, resources and information for overall well-being",
+            buttonDesc:"MORE INFO",
+            url:"#"
+
+        },
+
+        {
+            title:"Resources",
+            description:"Video content, podcasts and devotionals designed to empower you in your walk of birth.",
+            buttonDesc:"MORE INFO",
+            url:"#"
+
+        },
+
+        {
+            title:"Speak to Pastor",
+            description:"We have pastors and team that would love to contact you to ensure that you are connected and supported.",
+            buttonDesc:"MORE INFO",
+            url:"#"
+
+        },
     ]
 
 
