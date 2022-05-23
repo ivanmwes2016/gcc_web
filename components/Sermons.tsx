@@ -18,7 +18,7 @@ const SermonsWrapper =({SectionTitle, SermonTitle, description, videoSrc, isSmal
         <div className="flex flex-col md:flex-row justify-start">
             {/* Infor section */}
             <div className="flex flex-col w-full md:items-start md:w-3/6 md:text-left">
-                <div className="text-2xl pb-2 font-thin px-4">{SectionTitle}</div>
+                <div className="text-3xl pb-2 font-thin px-4">{SectionTitle}</div>
                 <div className="text-4xl font-black px-4 py-4 text-orange-500">{SermonTitle}</div>
                 <p className="font-thin text-xl pb-4 px-4 ">{description}</p>
                 <div className="hidden md:inline-block md:w-5/6"><ButtonComponent isTextButton={true} title="View all Sermons" isFontBig={true} /></div>
@@ -80,7 +80,7 @@ export const SermonsSection = () => {
    
     return (
         
-        <div className="w-full h-[472px] flex-1 items-center bg-cyan-800 text-gray-200 py-8 px-6">
+        <div className="w-full h-[472px] flex-1 items-center bg-color text-gray-200 py-8 px-6">
 
             <SermonsWrapper
                 SectionTitle="Latest Sermon"

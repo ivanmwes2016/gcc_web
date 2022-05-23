@@ -2,10 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import CardContainer from '../components/CardOne'
+import EventComponent from '../components/events'
 import GroupComponent from '../components/Group'
 
 
 import { HeroComponent } from '../components/Hero'
+import PrayerRequest from '../components/prayer'
 import { SermonsSection } from '../components/Sermons'
 
 const Home: NextPage = () => {
@@ -33,8 +35,10 @@ const Home: NextPage = () => {
         <GroupComponent />
 
         {/* Events */}
+        <EventComponent />
 
         {/* Prayer */}
+        <PrayerRequest />
 
         {/* Footer */}
        

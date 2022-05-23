@@ -18,7 +18,8 @@ interface IMenu{
 interface IHero{
     title:string,
     description:string,
-    image:string
+    image?:string
+    url?:string
 }
 
 interface Icard{
@@ -26,6 +27,7 @@ interface Icard{
     description?:string,
     image:string,
     alt?:string,
+    date?:string
     LinkName:string
     url:string,
 
@@ -41,7 +43,9 @@ interface IData{
     SocialMediaIcons:IMenu[]
     CardOne:Icard[]
     TeamGroups:Icard[]
-    
+    DiversityText:string
+    Events:Icard[]
+    PrayerText:IHero[]
 }
 
 
@@ -175,7 +179,70 @@ export const data:IData = {
             LinkName:"Read More",
             url:"#"
         },
+    ],
+
+    DiversityText:"Great Commission Church is a globally diverse church which is committed to racial equality and justice for all. Our mission is to find greatness in people and empower them to prosper, through proclaiming the Good news of Jesus Christ which has immediate and eternal implications for human flourishing.",
+
+    Events:[
+
+        {
+            title:"Greats Annual Conference",
+            image:"/bg-bg.jpg",
+            date:"03 JULY 2022",
+            LinkName:"View Event",
+            url:"#"
+        },
+
+        {
+            title:"Taking your Market Place",
+            image:"/bg-bg.jpg",
+            date:"03 JULY 2022",
+            LinkName:"View Event",
+            url:"#"
+        },
+
+        {
+            title:"Worship Night",
+            image:"/bg-bg.jpg",
+            date:"04 JULY 2022",
+            LinkName:"View Event",
+            url:"#"
+        },
+
+        {
+            title:"Night of Encounter",
+            image:"/bg-bg.jpg",
+            date:"03 AUGUST 2022",
+            LinkName:"View Event",
+            url:"#"
+        },
+
+        {
+            title:"Praise Rally",
+            image:"/bg-bg.jpg",
+            date:"03 MAY 2022",
+            LinkName:"View Event",
+            url:"#"
+        },
+
+        {
+            title:"Greats Annual Conference",
+            image:"/bg-bg.jpg",
+            date:"03 JULY 2022",
+            LinkName:"View Event",
+            url:"#"
+        },
+
+    ],
+
+    PrayerText:[
+        {
+            title:"Need a Prayer?",
+            description: "There are times when life is overwhelming when all we have is questions. In those moments hope can feel away. The great thing is that prayer shifts our perspective towards the One God who stands ready to listen. No matter what you're facing, we'd love to pray with you.",
+            url:"#"
+        }
     ]
+
 
 
 }

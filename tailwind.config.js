@@ -7,6 +7,10 @@ module.exports = {
     extend: {
       sizes:{
         section:"472px"
+      },
+
+      colors:{
+        color: "#002237"
       }
     },
   },

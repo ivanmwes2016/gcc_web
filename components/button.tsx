@@ -25,9 +25,9 @@ const Button = styled.button<Props>`
    ${props => !props.isOutline?
         
         css`
-            background-color: #019dae;
+            background-color: #ff8400;
             color: white;
-            border-color:#019dae;
+            border-color:#ff8400;
             .arrow{
                 display: none;
             }

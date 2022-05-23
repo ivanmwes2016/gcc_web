@@ -17,6 +17,7 @@ const NavHeader = styled.div`
     height: 90px;
     padding-left: 20px;
     padding-right: 20px;
+    z-index:1;
 
     .title{
         font-size: 18px;

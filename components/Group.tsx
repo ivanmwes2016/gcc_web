@@ -39,20 +39,6 @@ const Container = styled.div<IImage>`
     }
 `
 
-const Item = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 250px;
-    width: 100%;
-    background-color: #683bb7;
-    color: #fff;
-    margin: 15px;
-    font-size: 4em;
-`
-
-
-
 const GroupItem = ({ThumbNailTitle , ButtonPlaceholder, data, imageUrl}:Iprops & IImage) => {
 
 
@@ -84,34 +70,36 @@ const breakPoints:any =[
 ]
 
 const GroupComponent = ({type, onClick, isEdge}:any) => {
+//Not used===
+    // const myArrow = () => {
+    //     const pointer = type === consts.PREV ? `${ArrowCircleLeftIcon}` :`${ArrowCircleRightIcon}`
+    //     return(
+    //         <button onClick={onClick} disabled={isEdge}>{pointer}</button>
+    //     )
 
-    const myArrow = () => {
-        const pointer = type === consts.PREV ? `${ArrowCircleLeftIcon}` :`${ArrowCircleRightIcon}`
-        return(
-            <button onClick={onClick} disabled={isEdge}>{pointer}</button>
-        )
-
-    }
+    // }
+//=====
 
     return (
         <div className="py-5 px-5 w-full flex justify-center items-center flex-col">
-            <p className="text-2xl pb-5 font-thin">Teams & Groups</p>
+            <p className=" pb-5 font-thin text-3xl">Teams & Groups</p>
        
-            <Carousel breakPoints={breakPoints}>
+            <Carousel breakPoints={breakPoints} className="py-6">
                
-
             {data.TeamGroups.map(item => (
                 
                 <GroupItem key={item.LinkName}
                 ThumbNailTitle={item.title}
                 ButtonPlaceholder ={item.LinkName}
                 imageUrl={item.image}
-    
             />
 
             ))}
             </Carousel>
-          
+
+            <p className=" py-6 text-gray-700 font-bold text-3xl">Our Commitment to Racial Diversity</p>
+            <p className="w-3/4 font-thin text-2xl pb-4 px-4 text-gray-700">{data.DiversityText}</p>
+            <ButtonComponent  isFontBig title="READ MORE" />
         </div>
     )
 }
