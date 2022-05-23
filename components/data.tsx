@@ -84,8 +84,6 @@ export const data:IData = {
 // Logo Area data
     Logo: '../public/LOGO_GCM.png',
 
-    
-
 //Hero Image data
 
     Hero:[
@@ -139,22 +137,42 @@ export const data:IData = {
     TeamGroups:[
         {
             title:"Relationship & Marriage",
-            image:"#",
+            image:"/bg-bg.jpg",
             LinkName:"View Posts",
             url:"#"
         },
 
         {
             title:"Register or Volunteer",
-            image:"#",
-            LinkName:"View Posts",
+            image:"/bg-bg.jpg",
+            LinkName:"Volunteer",
             url:"#"
         },
 
         {
-            title:"View Posts",
-            image:"#",
-            LinkName:"View Posts",
+            title:"Music Ministry",
+            image:"/bg-bg.jpg",
+            LinkName:"Read More",
+            url:"#"
+        },
+
+        {
+            title:"Youth Ministry",
+            image:"/bg-bg.jpg",
+            LinkName:"Read More",
+            url:"#"
+        },
+
+        {
+            title:"Women's Ministry",
+            image:"/bg-bg.jpg",
+            LinkName:"Read More",
+            url:"#"
+        },
+        {
+            title:"Men's Ministry",
+            image:"/bg-bg.jpg",
+            LinkName:"Read More",
             url:"#"
         },
     ]
