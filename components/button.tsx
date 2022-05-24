@@ -8,7 +8,7 @@ interface Props{
     isTextButton?:boolean,
     isFontBig?:boolean,
     title:string,
-    className?:string
+    url?:string
     
 }
 
@@ -25,20 +25,26 @@ const Button = styled.button<Props>`
    ${props => !props.isOutline?
         
         css`
+            
             background-color: #ff8400;
             color: white;
             border-color:#ff8400;
-            .arrow{
-                display: none;
+            transition: all 0.5s;
+            :hover{
+                background-color: #ffcc00;
+                color: white;
+                border-color:#ffcc00;
+                transition: all 0.5s;
+                font-size: medium;
+                
             }
+           
     
         `:
         css`
-            color: '#019dae';
+            color: white;
             border-color:#fe6716;
-            .arrow{
-                display: none;
-            }
+           
         `
     };
 
@@ -52,6 +58,16 @@ const Button = styled.button<Props>`
             padding:0 ;
             border: none;
             background-color: rgba(0,0,0,0);
+            :hover{
+
+                .arrow{
+                display: inline;
+                color: gray;
+                transition: all 0.5s;
+                
+                }
+                
+            }
         `
         :
         css`

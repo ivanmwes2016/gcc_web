@@ -10,7 +10,7 @@ const NavHeader = styled.div`
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: rgb(229 231 235);
+    background-color: #1b2128;
     /* display: flex;
     justify-content: space-between;
     align-items: center; */
@@ -23,7 +23,7 @@ const NavHeader = styled.div`
         font-size: 18px;
         width: 30%;
         font-weight: bold;
-        color: #464646;
+        color: #e6e6e6;
         
     }
 
@@ -43,19 +43,31 @@ const NavHeader = styled.div`
         align-items: center;
         font-size: 12px;
         height: 90px;
-        color: #606060;
-
+        color: #e6e6e6;
+        
         :hover{
-            border-bottom-width: 2px;
+            border-bottom-width: 4px;
             border-bottom-color: #019dae ;
-            height: 90px;
+            /* height: 90px; */
+            color: #019dae;
+            cursor: pointer;
+
+            a{
+            color:#019dae;
+            
+            }
+
+            transition: all 0.5s;
         }
+
+        a{
+            color: #e6e6e6;
+            font-weight: bold;
+            transition: all 0.5s;
+        }
+        transition: all 0.5s;
     }
 
-    a{
-        color: #019dae;
-        font-weight: bold;
-    }
 
 `
 
@@ -86,7 +98,7 @@ export const HeaderComponent = ({title}:Props) => {
 
             <ButtonComponent title={'CONTACT'} isOutline={true} />
 
-            <MenuIcon className='w-10 h-10 inline lg:hidden stroke-1 stroke-sky-900 ' />
+            <MenuIcon className='w-10 h-10 inline lg:hidden stroke-1 stroke-slate-100 ' />
 
        
         </NavHeader>

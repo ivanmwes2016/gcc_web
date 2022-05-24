@@ -42,8 +42,8 @@ const Container = styled.div<IImage>`
         height: 70%;
         margin-top: 150px;
         width: 100%;
-        background: rgb(1,157,174);
-        background: linear-gradient(0deg, rgba(1,157,174,1) 15%, rgba(1,157,174,0) 79%);
+        background: rgb(2, 41, 82);
+        background: linear-gradient(0deg, rgb(2, 41, 82) 15%, rgba(1,157,174,0) 79%);
     }
 `
 
@@ -80,7 +80,7 @@ const breakPoints:any =[
     {width:1, itemsToShow:1},
     {width:550, itemsToShow:2, itemsToScoll:2},
     {width:768, itemsToShow:3},
-    {width:1200, itemsToShow:4},
+    {width:1200, itemsToShow:3},
 
 ]
 
