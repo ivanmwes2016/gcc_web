@@ -1,0 +1,112 @@
+[
+    {"TeamGroups":[
+        {
+            "slug":"relationships-marriage",
+            "title":"Relationship & Marriage",
+            "image":"/bg-bg.jpg",
+            "LinkName":"View Posts"
+    
+        },
+
+        {
+            "slug":"register",
+            "title":"Register or Volunteer",
+            "image":"/bg-bg.jpg",
+            "LinkName":"Volunteer"
+        },
+
+        {
+            "slug":"music-ministry",
+            "title":"Music Ministry",
+            "image":"/bg-bg.jpg",
+            "LinkName":"Read More"
+    
+        },
+
+        {
+            "slug":"youth-ministry",
+            "title":"Youth Ministry",
+            "image":"/bg-bg.jpg",
+            "LinkName":"Read More"
+    
+        },
+
+        {
+           "slug":"womens-ministry",
+            "title":"Women's Ministry",
+            "image":"/bg-bg.jpg",
+            "LinkName":"Read More"
+        },
+        {
+            "slug":"mens-ministry",
+            "title":"Men's Ministry",
+            "image":"/bg-bg.jpg",
+            "LinkName":"Read More"
+    
+        }
+    ]},
+
+    { "DiversityText":"Great Commission Church is a globally diverse church which is committed to racial equality and justice for all. Our mission is to find greatness in people and empower them to prosper, through proclaiming the Good news of Jesus Christ which has immediate and eternal implications for human flourishing."},
+
+    { "Events":[
+
+        {
+            "slug":"great-annual-conference",
+            "title":"Greats Annual Conference",
+            "image":"/bg-bg.jpg",
+            "date":"03 JULY 2022",
+            "LinkName":"View Event"
+        },
+
+        {
+            "slug":"tmp",
+            "title":"Taking your Market Place",
+            "image":"/bg-bg.jpg",
+            "date":"03 JULY 2022",
+            "LinkName":"View Event"
+        
+        },
+
+        {
+            "slug":"worship-night",
+            "title":"Worship Night",
+            "image":"/bg-bg.jpg",
+            "date":"04 JULY 2022",
+            "LinkName":"View Event"
+        },
+
+        {
+            "slug":"night-of-encounter",
+            "title":"Night of Encounter",
+            "image":"/bg-bg.jpg",
+            "date":"03 AUGUST 2022",
+            "LinkName":"View Event"
+        },
+
+        {
+            "slug":"praise-rally",
+            "title":"Praise Rally",
+            "image":"/bg-bg.jpg",
+            "date":"03 MAY 2022",
+            "LinkName":"View Event"
+        },
+
+        {
+            "slug":"great-annual-conference2",
+            "title":"Greats Annual Conference2333",
+            "image":"/bg-bg.jpg",
+            "date":"03 JULY 2022",
+            "LinkName":"View Event"
+        }
+
+    ]},
+
+    {"PrayerText":[
+        {
+            "title":"Need a Prayer?",
+            "description": "There are times when life is overwhelming when all we have is questions. In those moments hope can feel away. The great thing is that prayer shifts our perspective towards the One God who stands ready to listen. No matter what you're facing, we'd love to pray with you.",
+            "url":"#"
+        }
+    ]}
+ 
+]

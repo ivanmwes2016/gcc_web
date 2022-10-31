@@ -12,7 +12,7 @@ import { url } from "inspector";
 
 interface IMenu{
     name:string,
-    url:string,
+    slug:string,
     icon:any
 }
 
@@ -25,6 +25,7 @@ interface IHero{
 }
 
 interface Icard{
+    slug?:string,
     title:string,
     description?:string,
     image:string,
@@ -39,6 +40,7 @@ interface Icard{
 
 //Interface for the Menu data.
 interface IData{
+    [x: string]: any;
     MenuItems: IMenu[]
     Logo: string
     Hero:IHero[]
@@ -59,31 +61,31 @@ export const data:IData = {
     MenuItems:[
         {
             name:'LIVE SERVICE',
-            url:'#',
+            slug:'live-service',
             icon:<VideoCameraIcon className='w-8 h-8 stroke-1' />
         },
 
         {
             name:'ABOUT',
-            url:'#',
+            slug:'about',
             icon: <InformationCircleIcon className='w-8 h-8 stroke-1' />
         },
 
         {
             name:'SERMONS',
-            url:'#',
+            slug:'sermons',
             icon: <BookOpenIcon className='w-8 h-8 stroke-1' />
         },
 
         {
             name:'EVENTS',
-            url:'#',
+            slug:'events',
             icon: <CalendarIcon className='w-8 h-8 stroke-1' />
         },
 
         {
             name:'MISSIONS',
-            url:'#',
+            slug:'missions',
             icon: <GlobeIcon className='w-8 h-8 stroke-1' />
         },
     ],
@@ -104,7 +106,7 @@ export const data:IData = {
     SocialMediaIcons:[
         {
             name:'facebook',
-            url:'facebook',
+            slug:'facebook',
             icon:<GlobeIcon />
         },
 
@@ -112,6 +114,7 @@ export const data:IData = {
 
     CardOne:[
         {
+            slug:'visiting-great-commission',
             title:'Visiting Great Commission?',
             description:'We cant waint to weclome you in person. Great Commission Church is all about people.',
             image:'/bg-bg.jpg',
@@ -121,6 +124,7 @@ export const data:IData = {
         },
 
         {
+            slug:'childrens-ministry',
             title:"Children's Ministry",
             description:'We cant waint to weclome you in person. Great Commission Church is all about people.',
             image:'/bg-bg.jpg',
@@ -131,6 +135,7 @@ export const data:IData = {
         },
 
         {
+            slug:'gcc-connect',
             title:"Let's Connect!",
             description:'We cant waint to weclome you in person. Great Commission Church is all about people.',
             image:'/bg-bg.jpg',
@@ -143,6 +148,7 @@ export const data:IData = {
 
     TeamGroups:[
         {
+            slug:"relationships-marriage",
             title:"Relationship & Marriage",
             image:"/bg-bg.jpg",
             LinkName:"View Posts",
@@ -150,6 +156,7 @@ export const data:IData = {
         },
 
         {
+            slug:"register",
             title:"Register or Volunteer",
             image:"/bg-bg.jpg",
             LinkName:"Volunteer",
@@ -157,6 +164,7 @@ export const data:IData = {
         },
 
         {
+            slug:"music-ministry",
             title:"Music Ministry",
             image:"/bg-bg.jpg",
             LinkName:"Read More",
@@ -164,6 +172,7 @@ export const data:IData = {
         },
 
         {
+            slug:"youth-ministry",
             title:"Youth Ministry",
             image:"/bg-bg.jpg",
             LinkName:"Read More",
@@ -171,12 +180,14 @@ export const data:IData = {
         },
 
         {
+            slug:"womens-ministry",
             title:"Women's Ministry",
             image:"/bg-bg.jpg",
             LinkName:"Read More",
             url:"#"
         },
         {
+            slug:"mens-ministry",
             title:"Men's Ministry",
             image:"/bg-bg.jpg",
             LinkName:"Read More",

@@ -3,6 +3,7 @@ import { data } from './data'
 import { MenuIcon } from '@heroicons/react/outline'
 import ButtonComponent from './button'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 
 
@@ -78,8 +79,6 @@ interface Props{
 
 export const HeaderComponent = ({title}:Props) => {
 
-    const [state, setstate] = useState(null)
-
     return (
         <NavHeader className="flex justify-between space-x-8 items-center lg:flex ">
             <img className='w-20 h-20' src='/LOGO_GCM.png' />
@@ -88,8 +87,11 @@ export const HeaderComponent = ({title}:Props) => {
             <ul className='hidden lg:flex'>
                 {data.MenuItems.map( item => (
                     <li key={item.name}>
-                        <div>{item.icon}</div>
-                        <a>{item.name}</a>
+                         <div>{item.icon}</div>
+                        <Link href={`/${encodeURIComponent(item.slug)}`}>
+                            <a>{item.name}</a>
+                        </Link>
+                       
                     </li>
                 ))}
             </ul>
@@ -104,28 +106,6 @@ export const HeaderComponent = ({title}:Props) => {
         </NavHeader>
     )
 }
-
-
-
-
-
-// export const HeaderComponent = () => {
-//     console.log(data.MenuItems);
-//     return (
-//         <nav className='flex  flex-row w-full h-20 bg-gray-200 items-center'>
-//             <h2>GREAT COMMISION</h2>
-//             <ul className='flex flex-row w-10/12 justify-center items-center list-none'>
-//                 {data.MenuItems.map( item => (
-//                     <li  className='flex-3 justify-center list-none items-center mr-6 ml-6 text-xs  hover:border-b-2 h-20 pt-3 border-b-cyan-800 '>
-//                         <div>{item.icon}</div>
-//                         <a className='cursor-pointer'>{item.name}</a>
-//                         </li>
-//                 ))}
-//             </ul>
-       
-//         </nav>
-//     )
-// }
 
 
 
