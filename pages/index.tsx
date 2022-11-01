@@ -62,7 +62,7 @@ const Home: NextPage = ({bannerData, summaryData, groupsData, eventsData}:any) =
         <div className="py-5 px-5 w-full flex justify-center items-center flex-col bg-gray-200">
             <p className=" py-5 font-thin text-4xl text-gray-700">Events</p>
 
-            <Carousel breakPoints={breakPoints} className="py-6">
+            <Carousel breakPoints={breakPoints} isRTL className="py-6">
               {
                 eventsData?.map((item:any) => (
                   <EventItem 
