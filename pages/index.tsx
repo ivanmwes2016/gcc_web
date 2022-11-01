@@ -45,7 +45,7 @@ const Home: NextPage = ({bannerData, summaryData, groupsData, eventsData}:any) =
         {/* Teams and Groups */}
         <div className="py-5 px-5 w-full flex justify-center items-center flex-col">
         <p className=" pb-5 font-thin text-3xl">Teams & Groups</p>
-        <Carousel breakPoints={breakPoints} className="py-6">
+        <Carousel breakPoints={breakPoints} isRTL className="py-6">
                
             {groupsData?.map((groupItem: any) => (
                 <GroupCard  key={groupItem} groupCardData ={groupItem} />
