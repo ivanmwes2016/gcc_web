@@ -242,6 +242,11 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   "version" "15.7.5"
 
+"@types/react-select-country-list@^2.2.1":
+  "integrity" "sha512-Ixc9Vk+X+7P5KEEOK22ASf3y2McupLTfjQwhCUYUzlj00AgkDiERxT3t6Iv9MYkXQxkNx3pi+w8z/u7hdT3khg=="
+  "resolved" "https://registry.npmjs.org/@types/react-select-country-list/-/react-select-country-list-2.2.1.tgz"
+  "version" "2.2.1"
+
 "@types/react-slick@^0.23.8":
   "integrity" "sha512-SfzSg++/3uyftVZaCgHpW+2fnJFsyJEQ/YdsuqfOWQ5lqUYV/gY/UwAnkw4qksCj5jalto/T5rKXJ8zeFldQeA=="
   "resolved" "https://registry.npmjs.org/@types/react-slick/-/react-slick-0.23.8.tgz"
@@ -1083,6 +1088,16 @@
   dependencies:
     "aphrodite" "1.1.0"
 
+"react-country-dropdown@^1.0.4":
+  "integrity" "sha512-3FaBsuF+leBhz9+lOXmiKXGRtJly2n+3j82Z7jIJqTemp7WYTBBe4EiKYi6Esx9EMotTQs0JqC+1sDLSLv4kjA=="
+  "resolved" "https://registry.npmjs.org/react-country-dropdown/-/react-country-dropdown-1.0.4.tgz"
+  "version" "1.0.4"
+
+"react-country-region-selector@^3.6.1":
+  "integrity" "sha512-/hKRVFVxhsQKV6/csajd9uX4Lz6XHMVNtpKhMn/xGQtZDZrnsr+VeeeeXDooSn5cV0DFAk2eKk9c+otj7Hop9w=="
+  "resolved" "https://registry.npmjs.org/react-country-region-selector/-/react-country-region-selector-3.6.1.tgz"
+  "version" "3.6.1"
+
 "react-dom@^17.0.2":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
@@ -1101,6 +1116,11 @@
     "react-only-when" "^1.0.2"
     "react-swipeable" "^5.5.1"
     "resize-observer-polyfill" "1.5.0"
+
+"react-icons@^4.7.1":
+  "integrity" "sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.7.1.tgz"
+  "version" "4.7.1"
 
 "react-is@^16.13.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
