@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { data } from './data'
 import { MenuIcon } from '@heroicons/react/outline'
 import ButtonComponent from './button'

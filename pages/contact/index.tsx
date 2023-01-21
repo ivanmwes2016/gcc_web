@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import { BsEnvelopeOpen, BsMap } from 'react-icons/bs'
 import { BiPhoneCall } from 'react-icons/bi'
-import {
-  CountryDropdown,
-  RegionDropdown,
-  CountryRegionData,
-} from 'react-country-region-selector'
+import { CountryDropdown } from 'react-country-region-selector'
 import ButtonComponent from '../../components/button'
 
 const data = [
@@ -35,9 +31,9 @@ function ContactPage() {
 
   return (
     <div className="w-full flex flex-col items-center bg-gray-200">
-      <div className="w-full bg-white flex flex-row">
+      <div className="w-full bg-white flex lg:flex-row flex-col">
         {/* Contact Form */}
-        <div className="w-[50%]">
+        <div className="lg:w-[50%] w-full">
           <form className="p-10">
             <div className="flex flex-row justify-between items-center my-4">
               <div className="flex flex-col w-[45%]">
@@ -72,9 +68,8 @@ function ContactPage() {
               <CountryDropdown
                 value={country}
                 onChange={setCountry}
-                className="  w-40 border-2 border-gray-300 p-2 rounded-lg"
+                class="w-40 border-2 border-gray-300 p-2 rounded-lg"
               />
-
               <input
                 type="text"
                 className=" box-border border-2 border-gray-300 rounded-lg p-2 w-full ml-4"
@@ -83,18 +78,18 @@ function ContactPage() {
             </div>
 
             <div className="flex flex-col w-full my-4 h-40">
-              <label>Messgae</label>
+              <label>Message</label>
               <textarea className=" box-border border-2 border-gray-300 rounded-lg p-2 w-full h-40" />
             </div>
 
             <ButtonComponent title="Submit" />
           </form>
 
-          <div className="w-full flex flex-row justify-around items-center my-4">
+          <div className="w-full flex flex-wrap flex-row md:justify-center justify-start items-center my-4">
             {data.map((item, index) => (
               <div
                 key={index}
-                className="w-46 h-36 bg-gray-200 p-4 rounded-lg flex flex-col justify-center"
+                className="w-46 h-36 bg-gray-200 p-4 rounded-lg flex flex-col justify-center m-2"
               >
                 <div className=" w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-2">
                   {item.icon}
@@ -107,7 +102,7 @@ function ContactPage() {
           </div>
         </div>
         {/* Map */}
-        <div className="w-[50%] bg-gray-500">Map here</div>
+        <div className="lg:w-[50%] w-full bg-gray-500">Map here</div>
       </div>
     </div>
   )
