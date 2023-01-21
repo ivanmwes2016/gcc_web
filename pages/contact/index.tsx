@@ -68,6 +68,7 @@ function ContactPage() {
               <CountryDropdown
                 value={country}
                 onChange={setCountry}
+                // @ts-ignore
                 class="w-40 border-2 border-gray-300 p-2 rounded-lg"
               />
               <input
