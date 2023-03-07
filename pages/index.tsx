@@ -7,123 +7,144 @@ import PrayerRequest from '../components/prayer'
 import { SermonsSection } from '../components/Sermons'
 import Carousel from 'react-elastic-carousel'
 import { client } from '../lib/client'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { data } from '../components/data'
 import ButtonComponent from '../components/button'
+import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/outline'
 
-
-const breakPoints:any =[
-  {width:1, itemsToShow:1},
-  {width:550, itemsToShow:2, itemsToScoll:2},
-  {width:768, itemsToShow:3},
-  {width:1200, itemsToShow:3},
-
+const breakPoints: any = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2, itemsToScoll: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 3 },
 ]
 
-const Home: NextPage = ({bannerData, summaryData, groupsData, eventsData}:any) => {
- 
+const Home: NextPage = ({
+  bannerData,
+  summaryData,
+  groupsData,
+  eventsData,
+}: any) => {
+  const [expand, setExpand] = useState(true)
+  const quickLinksRef = useRef(null)
+
+  const scrolFunction = (id: string) => {
+    document.getElementById(id)?.scrollTop
+  }
+
   return (
-    <div className="flex min-h-screen flex-col items-center">
+    <div className="flex flex-col items-center">
+      <HeroComponent heroBanner={bannerData.length && bannerData[0]} />
 
-        {/* Hero */}
-          <HeroComponent heroBanner ={bannerData.length && bannerData[0]}/>
-          
-          
-          {/* Quick Links Section */}
-        <div className="w-full flex flex-row justify-center py-3">
-          {summaryData?.map((item:any) => 
+      {/* Quick Links Section */}
+      <div className="flex flex-col items-center" ref={quickLinksRef}>
+        <div
+          className={`w-full flex flex-col md:flex-row md:justify-center py-3 overflow-y-hidden ${
+            expand && 'h-[480px]'
+          } md:h-[35vh]`}
+        >
+          {summaryData?.map((item: any) => (
             <Card key={item._id} infoCardData={item} />
-          )}
+          ))}
         </div>
-          
-       
-        {/* Sermon Section */}
+        <p
+          className={`md:hidden text-center bg-red-200 mb-4 py-2 w-[60%] rounded-full ${
+            expand ? 'block' : 'hidden'
+          }`}
+          onClick={() => setExpand(false)}
+        >
+          View more information
+        </p>
 
-          <SermonsSection />
-    
+        <p
+          className={`md:hidden text-center bg-red-400 mb-4 py-2 w-[60%] rounded-full text-white  ${
+            expand ? 'hidden' : 'block'
+          }`}
+          onClick={() => {
+            setExpand(true)
+            window.scrollTo({
+              top: 600,
+              behavior: 'smooth',
+            })
+          }}
+        >
+          showLess
+        </p>
+      </div>
 
-        {/* Teams and Groups */}
-        <div className="py-5 px-5 w-full flex justify-center items-center flex-col">
-        <p className=" pb-5 font-thin text-3xl">Teams & Groups</p>
-        <Carousel breakPoints={breakPoints} isRTL className="py-6">
-               
-            {groupsData?.map((groupItem: any) => (
-                <GroupCard  key={groupItem} groupCardData ={groupItem} />
-            ))}
-            </Carousel>
+      {/* Sermon Section */}
 
-            <p className=" py-6 text-gray-700 font-bold text-3xl">Our Commitment to Racial Diversity</p>
-            <p className="w-3/4 font-thin text-2xl pb-4 px-4 text-gray-700">{data.DiversityText}</p>
-            <ButtonComponent  isFontBig title="READ MORE" />
+      <SermonsSection />
 
+      {/* Teams and Groups */}
+      <div className="py-5 px-5 w-full flex justify-center items-center flex-col">
+        <p className=" font-thin text-3xl mb-5">Teams & Groups</p>
+        {/* <div className="flex flex-row my-8 justify-around w-full">
+          <ArrowLeftIcon className="w-5 h-5" />
+          <ArrowRightIcon className="w-5 h-5" />
+        </div> */}
+
+        <div className="flex flex-row gap-4 w-full md:w-[80%] overflow-x-scroll scrollbar-hide md:overflow-x-visible no-scrollbar">
+          {groupsData?.map((groupItem: any) => (
+            <GroupCard key={groupItem} groupCardData={groupItem} />
+          ))}
         </div>
 
-        {/* Events */}
-        <div className="py-5 px-5 w-full flex justify-center items-center flex-col bg-gray-200">
-            <p className=" py-5 font-thin text-4xl text-gray-700">Events</p>
+        <p className=" py-6 text-gray-700 font-bold text-3xl text-center">
+          Our Commitment to Racial Diversity
+        </p>
+        <p className="w-full md:w-3/4 font-light text-2xl pb-4 px-4 text-gray-700 text-center ">
+          {data.DiversityText}
+        </p>
+        <ButtonComponent isFontBig title="READ MORE" />
+      </div>
 
-            <Carousel breakPoints={breakPoints} isRTL className="py-6">
-              {
-                eventsData?.map((item:any) => (
-                  <EventItem 
-                    key={item.slug}
-                    ThumbNailTitle={item.EventTitle}
-                    ButtonPlaceholder={item.buttonText}
-                    date={item.EventDate}
-                    StartTime={item.time1}
-                    EndTime={item.time2}
-                    imageUrl={item.image}
-                    />
-                ))
-              }
+      {/* Events */}
+      <div className="py-5 px-5 w-full flex justify-center items-center flex-col bg-gray-200">
+        <p className=" py-5 font-thin text-4xl text-gray-700">Events</p>
 
-            </Carousel>
+        <div className="py-6 flex flex-row gap-4 w-full md:w-[80%] overflow-x-scroll scrollbar-hide md:overflow-x-visible no-scrollbar">
+          {eventsData?.map((item: any) => (
+            <EventItem
+              key={item.slug}
+              ThumbNailTitle={item.EventTitle}
+              ButtonPlaceholder={item.buttonText}
+              date={item.EventDate}
+              StartTime={item.time1}
+              EndTime={item.time2}
+              imageUrl={item.image}
+            />
+          ))}
         </div>
-        
+      </div>
 
-        {/* Prayer */}
-        <PrayerRequest />
+      {/* Prayer */}
+      <PrayerRequest />
 
-        {/* Footer */}
-
-
+      {/* Footer */}
+      
     </div>
   )
 }
 
-
 //Get data
-export const getServerSideProps = async (pageContext:any) => {
+export const getServerSideProps = async (pageContext: any) => {
+  const bannerData = await client.fetch(`*[_type == "Hero"]`)
 
-  const bannerData = await client.fetch(
-    `*[_type == "Hero"]`
-  )
+  const summaryData = await client.fetch(`*[_type == "summaryStrip"]`)
 
-  const summaryData = await client.fetch(
-    `*[_type == "summaryStrip"]`
-  )
+  const groupsData = await client.fetch(`*[_type == "groups"]`)
 
-  const groupsData = await client.fetch(
-    `*[_type == "groups"]`
-  )
+  const eventsData = await client.fetch(`*[_type == "event"]`)
 
-  const eventsData = await client.fetch(
-    `*[_type == "event"]`
-  )
- 
-
-
-  return{
-    props:{
+  return {
+    props: {
       bannerData,
       summaryData,
       groupsData,
-      eventsData
-    }
+      eventsData,
+    },
   }
-
 }
-
-
 
 export default Home

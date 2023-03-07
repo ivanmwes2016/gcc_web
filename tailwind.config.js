@@ -5,14 +5,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      sizes:{
-        section:"472px"
+      sizes: {
+        section: "472px"
       },
 
-      colors:{
+      colors: {
         color: "#002237"
       }
     },
   },
-  plugins: [],
+  plugins: [
+
+  ],
 }

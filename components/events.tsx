@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import ButtonComponent from './button'
-import { ArrowCircleLeftIcon, ArrowCircleRightIcon, CalendarIcon } from '@heroicons/react/solid'
+import {
+  ArrowCircleLeftIcon,
+  ArrowCircleRightIcon,
+  CalendarIcon,
+} from '@heroicons/react/solid'
 import { urlFor } from '../lib/client'
 import Link from 'next/link'
 
-
-interface Iprops
-{
-
-    ThumbNailTitle:string,
-    ButtonPlaceholder:string
-    date?:string
-    StartTime?:string
-    EndTime?:string
+interface Iprops {
+  ThumbNailTitle: string
+  ButtonPlaceholder: string
+  date?: string
+  StartTime?: string
+  EndTime?: string
 }
 
 interface IImage {
-    imageUrl:string
+  imageUrl: string
 }
 
 const Container = styled.div<IImage>`
@@ -31,23 +32,14 @@ const Container = styled.div<IImage>`
 
 
     .groupthumb{
-        background-image: url("${props => props.imageUrl}");
+        background-image: url("${(props) => props.imageUrl}");
         cursor: pointer;
         overflow: hidden;
         border-radius: 20px;
         background-size: cover;
         background-repeat: no-repeat;
         width: 20rem;
-        height: 30rem;
-        box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.5);
-
-        transform: scale(1,1);
-        transition: transform 0.5s ease;
-
-        &:hover{
-            transform: scale(1.1, 1.1);
-        }
-        
+        height: 30rem; 
     }
     .inner-group-thumb{
         height: 70%;
@@ -58,16 +50,20 @@ const Container = styled.div<IImage>`
     }
 `
 
-export const EventItem = ({ThumbNailTitle , ButtonPlaceholder, date, StartTime, EndTime, imageUrl}:Iprops & IImage) => {
-
-
-    return(
-        <Link href={'#'}>
-        <Container imageUrl={ urlFor(imageUrl).toString()}>
-            <div className=
-            "groupthumb">
-                <div 
-                    className=" inner-group-thumb 
+export const EventItem = ({
+  ThumbNailTitle,
+  ButtonPlaceholder,
+  date,
+  StartTime,
+  EndTime,
+  imageUrl,
+}: Iprops & IImage) => {
+  return (
+    <Link href={'#'}>
+      <Container imageUrl={urlFor(imageUrl).toString()}>
+        <div className="groupthumb md:hover:scale-110 md:transition-all md:ease-in">
+          <div
+            className=" inner-group-thumb 
                     w-full 
                     flex 
                     flex-col
@@ -75,21 +71,28 @@ export const EventItem = ({ThumbNailTitle , ButtonPlaceholder, date, StartTime, 
                     justify-center 
                     text-white 
                     "
-                    >
-                        {/* Title */}
-                        <p className="text-2xl w-52 uppercase font-extrabold text-center">{ThumbNailTitle}</p>
-                        {/* Date */}
-                        <div className="text-sm py-4 flex flex-row"><CalendarIcon className="w-5 h-5 mx-2"/>{date}</div>
-                        <div className="text-sm py-4">{StartTime} to {EndTime}</div>
-
-                        <ButtonComponent isTextButton={true} isFontBig={true} title={ButtonPlaceholder} />
-                        
-                        </div>
+          >
+            {/* Title */}
+            <p className="text-2xl w-52 uppercase font-extrabold text-center">
+              {ThumbNailTitle}
+            </p>
+            {/* Date */}
+            <div className="text-sm py-4 flex flex-row">
+              <CalendarIcon className="w-5 h-5 mx-2" />
+              {date}
             </div>
-                
-        </Container>
+            <div className="text-sm py-4">
+              {StartTime} to {EndTime}
+            </div>
 
-        </Link>
-    )
+            <ButtonComponent
+              isTextButton={true}
+              isFontBig={true}
+              title={ButtonPlaceholder}
+            />
+          </div>
+        </div>
+      </Container>
+    </Link>
+  )
 }
-

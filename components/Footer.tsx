@@ -12,31 +12,36 @@ interface Iprops {
 
 const FooterHolder = ({ title, desc, btnDesc }: Iprops) => {
   return (
-    <div className="md:flex-col md:flex md:items-center md:justify-between  md:w-64 md:h-72 sm: hidden">
-      <p className="font-black text-xl text-center py-6 text-gray-700">
-        {title}
-      </p>
-      <p className="text-center text-gray-600">{desc}</p>
-      <ButtonComponent isOutline={false} title={btnDesc} />
+    <div className="flex-col flex items-center justify-between  md:w-64 md:h-55 ">
+      <p className="font-black text-lg text-center text-gray-700">{title}</p>
+      <p className="text-center my-4 text-gray-600 text-sm">{desc}</p>
+      <div className="hidden md:block">
+        <ButtonComponent isOutline={false} title={btnDesc} />
+      </div>
+      <div className="text-sm md:hidden bg-sky-200 p-3 rounded-full">
+        More Info
+      </div>
     </div>
   )
 }
 
 export const Footer = () => {
   return (
-    <div className="md:w-full md:flex-wrap md:flex md:justify-between md:px-56 md:py-8 border-t-2 border-gray-200">
-      {data.FooterData.map((item) => (
-        <div key={item.title} className="py-3">
-          <FooterHolder
-            title={item.title}
-            desc={item.description}
-            btnDesc={item.buttonDesc}
-          />
-        </div>
-      ))}
+    <div>
+      <div className="md:w-full grid w-full md:grid-cols-3 grid-cols-2 md:justify-center md:px-56 md:py-8 border-t-2 border-gray-200">
+        {data.FooterData.map((item) => (
+          <div key={item.title} className="py-4 flex justify-center">
+            <FooterHolder
+              title={item.title}
+              desc={item.description}
+              btnDesc={item.buttonDesc}
+            />
+          </div>
+        ))}
+      </div>
 
-      <p className=" text-gray-500 text-sm w-full flex justify-center items-center pt-5">
-        Designed and Coded by Ivan Mwesigwa | 07951192016{' '}
+      <p className=" text-gray-500 text-xs w-full flex justify-center items-center py-5">
+        Designed and Coded by Ivan Mwesigwa | 07951192016
       </p>
     </div>
   )
