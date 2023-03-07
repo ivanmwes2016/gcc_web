@@ -71,8 +71,6 @@ const Home: NextPage = ({
         </p>
       </div>
 
-      {/* Sermon Section */}
-
       <SermonsSection />
 
       {/* Teams and Groups */}
