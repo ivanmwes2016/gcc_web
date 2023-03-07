@@ -2,7 +2,6 @@ import React, { useState, useEffect, useReducer } from 'react'
 import styled from 'styled-components'
 import { env } from 'process'
 import ButtonComponent from './button'
-import axios from 'axios'
 
 interface ISermons {
   SectionTitle: string
@@ -54,7 +53,7 @@ const SermonsWrapper = ({
 }
 
 export const SermonsSection = () => {
-  const [title, setTitle] = useState<any>([])
+  const [title, setTitle] = useState<any>({})
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
   const [url, setUrl] = useState<any>('')
@@ -73,9 +72,9 @@ export const SermonsSection = () => {
         )
         if (res.status === 200) {
           const data = await res.json()
-          setUrl(data.items[0]['id'])
-          setTitle(data.items[0]['snippet'])
-        } else console.log('Nothing Here ==> ')
+          setUrl(data?.items[0].id.videoId)
+          setTitle(data?.items[0]?.snippet)
+        }
       } catch (err) {
         setIsError(true)
       }
@@ -91,9 +90,9 @@ export const SermonsSection = () => {
     <div className="w-full md:max-h-[480px] h-[700px] bg-color text-gray-200 py-8 px-6">
       <SermonsWrapper
         SectionTitle="Latest Sermon"
-        SermonTitle={title['title']}
-        description={title['description']}
-        videoSrc={'https://www.youtube.com/embed/' + url['videoId']}
+        SermonTitle={title?.title}
+        description={title?.description}
+        videoSrc={'https://www.youtube.com/embed/' + url}
       />
     </div>
   )

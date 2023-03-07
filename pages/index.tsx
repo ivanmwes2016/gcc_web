@@ -11,13 +11,6 @@ import { data } from '../components/data'
 import ButtonComponent from '../components/button'
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/outline'
 
-const breakPoints: any = [
-  { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2, itemsToScoll: 2 },
-  { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 3 },
-]
-
 const Home: NextPage = ({
   bannerData,
   summaryData,
