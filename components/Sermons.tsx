@@ -68,11 +68,14 @@ export const SermonsSection = () => {
       const Key = process.env.NEXT_PUBLIC_Y_KEY
 
       try {
-        const res = await axios(
+        const res = await fetch(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ChannelID}&key=${Key}&id&order=date&maxResults=12`
         )
-        setUrl(res.data.items[0]['id'])
-        setTitle(res.data.items[0]['snippet'])
+        if (res.status === 200) {
+          const data = await res.json()
+          setUrl(data.items[0]['id'])
+          setTitle(data.items[0]['snippet'])
+        } else console.log('Nothing Here ==> ')
       } catch (err) {
         setIsError(true)
       }
