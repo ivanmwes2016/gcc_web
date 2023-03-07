@@ -39,7 +39,7 @@ const Container = styled.div<IImage>`
 export const GroupCard = ({ groupCardData }: any) => {
   return (
     <Container imageUrl={urlFor(groupCardData.image).toString()}>
-      <div className="groupthumb w-80 h-56 shadow-md">
+      <div className="groupthumb  w-72 h-56 shadow-md">
         <div
           className=" inner-group-thumb 
                     w-full font-bold 

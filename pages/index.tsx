@@ -5,7 +5,6 @@ import { GroupCard } from '../components/Group'
 import { HeroComponent } from '../components/Hero'
 import PrayerRequest from '../components/prayer'
 import { SermonsSection } from '../components/Sermons'
-import Carousel from 'react-elastic-carousel'
 import { client } from '../lib/client'
 import React, { useRef, useState } from 'react'
 import { data } from '../components/data'
@@ -39,9 +38,9 @@ const Home: NextPage = ({
       {/* Quick Links Section */}
       <div className="flex flex-col items-center" ref={quickLinksRef}>
         <div
-          className={`w-full flex flex-col md:flex-row md:justify-center py-3 overflow-y-hidden ${
+          className={`w-full flex flex-col my-5 md:flex-row md:justify-center items-center overflow-y-hidden ${
             expand && 'h-[480px]'
-          } md:h-[35vh]`}
+          } md:h-[350px]`}
         >
           {summaryData?.map((item: any) => (
             <Card key={item._id} infoCardData={item} />
@@ -84,7 +83,7 @@ const Home: NextPage = ({
           <ArrowRightIcon className="w-5 h-5" />
         </div> */}
 
-        <div className="flex flex-row gap-4 w-full md:w-[80%] overflow-x-scroll scrollbar-hide md:overflow-x-visible no-scrollbar">
+        <div className="flex flex-row gap-4 w-full md:w-[80%] md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-scroll scrollbar-hide  no-scrollbar">
           {groupsData?.map((groupItem: any) => (
             <GroupCard key={groupItem} groupCardData={groupItem} />
           ))}
@@ -122,7 +121,6 @@ const Home: NextPage = ({
       <PrayerRequest />
 
       {/* Footer */}
-      
     </div>
   )
 }
