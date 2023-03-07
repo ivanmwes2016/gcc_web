@@ -28,12 +28,10 @@ export const HeroComponent = ({ heroBanner }: IBannerData) => {
       }}
     >
       <div className="flex flex-col justify-center items-center">
-        {/* big title */}
-        <p className="text-6xl font-extrabold text-gray-300">
+        <p className="text-6xl font-extrabold text-gray-300 text-center px-5">
           {heroBanner.title}
         </p>
-        {/* small text */}
-        <p className="text-gray-300 text-lg font-bold py-5 w-96 lg:w-4/6">
+        <p className="text-gray-300 text-lg font-bold py-5 w-96 lg:w-4/6 px-8 text-center">
           {heroBanner.description}
         </p>
         <ButtonComponent

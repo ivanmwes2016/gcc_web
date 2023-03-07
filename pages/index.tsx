@@ -39,7 +39,7 @@ const Home: NextPage = ({
       <div className="flex flex-col items-center" ref={quickLinksRef}>
         <div
           className={`w-full flex flex-col my-5 md:flex-row md:justify-center items-center overflow-y-hidden ${
-            expand && 'h-[480px]'
+            expand && 'h-[460px]'
           } md:h-[350px]`}
         >
           {summaryData?.map((item: any) => (

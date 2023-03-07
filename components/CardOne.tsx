@@ -6,7 +6,7 @@ const Card = ({ infoCardData }: any) => {
   return (
     <div
       key={infoCardData._id}
-      className=" w-[450px] h-[35vh] rounded-xl m-3 flex flex-col justify-between items-center cursor-pointer transform transition-all
+      className=" md:w-[450px] md:h-[35vh] rounded-xl m-3 flex flex-col justify-between items-center cursor-pointer transform transition-all
       duration-500 ease-out delay-75 hover:scale-11 hover:bg-gray-200 bg-slate-200 shadow-md p-5"
     >
       <div className="flex md:flex-row flex-col">
