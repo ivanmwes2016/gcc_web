@@ -49,7 +49,6 @@ export const GroupCard = ({ groupCardData }: any) => {
                     text-white 
                     bg-sky-400
                     bg-opacity-60
-                    
                     "
         >
           {groupCardData.title}

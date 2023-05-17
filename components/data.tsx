@@ -6,10 +6,7 @@ import {
   GlobeIcon,
   HomeIcon,
   ChatIcon,
-  FastForwardIcon,
 } from '@heroicons/react/outline'
-
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 interface IMenu {
   name: string
