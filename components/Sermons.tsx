@@ -84,8 +84,6 @@ export const SermonsSection = () => {
     fetchData()
   }, [])
 
-  // console.log(data["videoId"]);
-
   return (
     <div className="w-full md:max-h-[480px] h-[700px] bg-color text-gray-200 py-8 px-6">
       <SermonsWrapper

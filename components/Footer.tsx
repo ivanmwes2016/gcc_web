@@ -18,8 +18,8 @@ const FooterHolder = ({ title, desc, btnDesc }: Iprops) => {
       <div className="hidden md:block">
         <ButtonComponent isOutline={false} title={btnDesc} />
       </div>
-      <div className="text-sm md:hidden bg-sky-200 p-3 rounded-full">
-        More Info
+      <div className="text-sm md:hidden p-3 rounded-full">
+        <ButtonComponent title="MORE INFO" />
       </div>
     </div>
   )
@@ -28,7 +28,7 @@ const FooterHolder = ({ title, desc, btnDesc }: Iprops) => {
 export const Footer = () => {
   return (
     <div>
-      <div className="md:w-full grid w-full md:grid-cols-3 grid-cols-2 md:justify-center md:px-56 md:py-8 border-t-2 border-gray-200">
+      <div className="md:w-full grid w-full md:grid-cols-3 grid-cols-2 md:justify-center md:px-56 md:py-8 border-t-2 border-gray-200 bg-lightGray ">
         {data.FooterData.map((item) => (
           <div key={item.title} className="py-4 flex justify-center">
             <FooterHolder

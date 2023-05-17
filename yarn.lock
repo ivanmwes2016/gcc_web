@@ -189,6 +189,26 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@portabletext/react@^3.0.0":
+  "integrity" "sha512-bvh9Ls3ZOa7rPOtJ2fTrTFAC6nXAwHlyt1ukFqFSgTehtsgl91WB2kaBa3XdXCBiobzED3OPcLZ3Y3fsb9ZFiQ=="
+  "resolved" "https://registry.npmjs.org/@portabletext/react/-/react-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "@portabletext/toolkit" "^2.0.1"
+    "@portabletext/types" "^2.0.2"
+
+"@portabletext/toolkit@^2.0.1":
+  "integrity" "sha512-vr2SeDFUFV+VmRIyYsHBMimZLiiN0S7qIridt/YLJs3Wm1dI4jsfUam82AQwheSMjvWdBiBZ+Wsjq5HZBG4htw=="
+  "resolved" "https://registry.npmjs.org/@portabletext/toolkit/-/toolkit-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "@portabletext/types" "^2.0.0"
+
+"@portabletext/types@^2.0.0", "@portabletext/types@^2.0.2":
+  "integrity" "sha512-3xTbSa80G1nODyACY0ilrmPo1PmU1xuoPvfcpzpqSEL0kX01fSW+21PKgS9BcG+GqdG9HK/VxciKWa+nFA7mqg=="
+  "resolved" "https://registry.npmjs.org/@portabletext/types/-/types-2.0.2.tgz"
+  "version" "2.0.2"
+
 "@sanity/client@^3.3.0":
   "integrity" "sha512-ecIRsV+IncI1P9I6ZdB3xKLBpWVggqtiY0RLWeT3RWaP4cX6lXzD5fPknaXaBnCxtIr9ZhqZVqpRkyjrUlHe0Q=="
   "resolved" "https://registry.npmjs.org/@sanity/client/-/client-3.3.0.tgz"

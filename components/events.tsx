@@ -8,6 +8,7 @@ import {
 } from '@heroicons/react/solid'
 import { urlFor } from '../lib/client'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Iprops {
   ThumbNailTitle: string
@@ -15,40 +16,8 @@ interface Iprops {
   date?: string
   StartTime?: string
   EndTime?: string
+  imageUrl?: string | any
 }
-
-interface IImage {
-  imageUrl: string
-}
-
-const Container = styled.div<IImage>`
-
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-
-
-    .groupthumb{
-        background-image: url("${(props) => props.imageUrl}");
-        cursor: pointer;
-        overflow: hidden;
-        border-radius: 20px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 20rem;
-        height: 30rem; 
-    }
-    .inner-group-thumb{
-        height: 70%;
-        margin-top: 150px;
-        width: 100%;
-        background: rgb(2, 41, 82);
-        background: linear-gradient(0deg, rgb(2, 41, 82) 15%, rgba(1,157,174,0) 79%);
-    }
-`
 
 export const EventItem = ({
   ThumbNailTitle,
@@ -57,42 +26,38 @@ export const EventItem = ({
   StartTime,
   EndTime,
   imageUrl,
-}: Iprops & IImage) => {
+}: Iprops) => {
   return (
-    <Link href={'#'}>
-      <Container imageUrl={urlFor(imageUrl).toString()}>
-        <div className="groupthumb md:hover:scale-110 md:transition-all md:ease-in">
-          <div
-            className=" inner-group-thumb 
-                    w-full 
-                    flex 
-                    flex-col
-                    items-center
-                    justify-center 
-                    text-white 
-                    "
-          >
-            {/* Title */}
-            <p className="text-2xl w-52 uppercase font-extrabold text-center">
-              {ThumbNailTitle}
-            </p>
-            {/* Date */}
-            <div className="text-sm py-4 flex flex-row">
-              <CalendarIcon className="w-5 h-5 mx-2" />
-              {date}
-            </div>
-            <div className="text-sm py-4">
-              {StartTime} to {EndTime}
-            </div>
+    <div className="w-full flex flex-col justify-center items-center">
+      <div className=" w-56 h-56 overflow-hidden rounded-full ">
+        <Image
+          src={urlFor(imageUrl).toString()}
+          width={300}
+          height={300}
+          className=" w-40 hover:scale-125 transition-all ease-in hover:grayscale object-cover "
+        />
+      </div>
+      <div className=" w-full flex flex-col items-center justify-center text-gray-500 mt-4">
+        <p className="text-2xl w-52 uppercase font-extrabold text-center">
+          {ThumbNailTitle}
+        </p>
 
-            <ButtonComponent
-              isTextButton={true}
-              isFontBig={true}
-              title={ButtonPlaceholder}
-            />
-          </div>
+        <div className="text-sm py-2 flex flex-row">
+          <CalendarIcon className="w-5 h-5 mx-2" />
+          {date}
         </div>
-      </Container>
-    </Link>
+        <div className="text-sm py-2">
+          {StartTime} to {EndTime}
+        </div>
+
+        <ButtonComponent
+          isTextButton={true}
+          isFontBig={true}
+          title={ButtonPlaceholder}
+        />
+      </div>
+    </div>
   )
 }
+
+// imageUrl={urlFor(imageUrl).toString()}

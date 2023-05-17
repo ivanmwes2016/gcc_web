@@ -108,35 +108,5 @@
         "url": "#"
       }
     ]
-  },
-
-  {
-    "aboutUs": {
-      "tagline": "Everybody is somebody because of the in dwelling Spirit of God",
-      "description": "We are a church that trusts in God, the power of Jesus Christ's resurrection, and the presence of the Holy Spirit. We hold that everyone has value because of the presence of the Holy Spirit. Seeing the gifts others possess shown is what we care about most.",
-      "belief": {
-        "title": "Belief",
-        "description": "We are a faith based church that believe nothing is impossible with God if you believe."
-      },
-      "coreValues": {
-        "title": "Core Values",
-        "description": "We respect God,our leadership and people,we are optimistic in all that we do as church and about integrity that define who we are."
-      },
-
-      "commitment": {
-        "title": "Committed",
-        "description": "We are committed to teaching faith,evangelise to the world with the word of God that will touch and transform lives into God’s created image."
-      },
-
-      "visionStatment": {
-        "title": "",
-        "description": ""
-      },
-
-      "missionStatment": {
-        "title": "",
-        "description": ""
-      }
-    }
   }
 ]

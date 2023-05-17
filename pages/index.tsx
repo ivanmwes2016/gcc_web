@@ -69,12 +69,8 @@ const Home: NextPage = ({
       {/* Teams and Groups */}
       <div className="py-5 px-5 w-full flex justify-center items-center flex-col">
         <p className=" font-thin text-3xl mb-5">Teams & Groups</p>
-        {/* <div className="flex flex-row my-8 justify-around w-full">
-          <ArrowLeftIcon className="w-5 h-5" />
-          <ArrowRightIcon className="w-5 h-5" />
-        </div> */}
 
-        <div className="flex flex-row gap-4 w-full md:w-[80%] md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-scroll scrollbar-hide  no-scrollbar">
+        <div className="flex flex-row gap-4 w-full md:w-full md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-scroll scrollbar-hide  no-scrollbar">
           {groupsData?.map((groupItem: any) => (
             <GroupCard key={groupItem} groupCardData={groupItem} />
           ))}
@@ -90,7 +86,7 @@ const Home: NextPage = ({
       </div>
 
       {/* Events */}
-      <div className="py-5 px-5 w-full flex justify-center items-center flex-col bg-gray-200">
+      <div className="py-5 px-5 w-full flex justify-center items-center flex-col bg-lightGray">
         <p className=" py-5 font-thin text-4xl text-gray-700">Events</p>
 
         <div className="py-6 flex flex-row gap-4 w-full md:w-[80%] overflow-x-scroll scrollbar-hide md:overflow-x-visible no-scrollbar">

@@ -19,15 +19,15 @@ export const HeaderComponent = ({ title }: Props) => {
           </div>
         </div>
 
-        <ul className=" hidden md:flex m:gap-8 md:w-[60%] md:justify-around">
+        <ul className=" hidden md:flex md:flex-row md:w-[60%] md:justify-around">
           {data.MenuItems.map((item) => (
             <li
               key={item.name}
-              className="flex lg:flex-row items-center md:flex-col  hover:text-sky-500 transition-all ease-in hover:scale-125 "
+              className="flex lg:flex-col items-center md:flex-col  hover:text-sky-500 transition-all ease-in hover:scale-110 "
             >
               <div>{item.icon}</div>
               <Link href={`/${encodeURIComponent(item.slug)}`}>
-                <a className="text-sm font-bold whitespace-nowrap">
+                <a className="text-sm font-black whitespace-nowrap text-gray-600">
                   {item.name}
                 </a>
               </Link>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { ArrowCircleRightIcon } from '@heroicons/react/solid'
-import styled, { css } from 'styled-components'
 import Link from 'next/link'
 
 interface IProps {
@@ -12,25 +11,18 @@ interface IProps {
   className?: string
 }
 
-const ButtonComponent = ({
-  isOutline,
-  isTextButton,
-  isFontBig,
-  title,
-  urlLink,
-  className,
-}: IProps) => {
+const ButtonComponent = ({ isOutline, title, urlLink, className }: IProps) => {
   return (
     <div
-      className={`p-2 text-2xl md:text-base ${className}  rounded-lg cursor-pointer ${
+      className={` text-2xl md:text-base ${className}  rounded-full cursor-pointer px-4 py-2 ${
         isOutline
-          ? ' border-sky-700 border-2 hover:bg-sky-500 hover:text-white transition-all ease-in hover:border-sky-500'
-          : ' bg-sky-700 text-white hover:bg-sky-500 transition-all ease-in'
+          ? ' border-indigo-500 border-2 hover:bg-sky-500 hover:text-white transition-all ease-in duration-200 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-500'
+          : ' bg-gradient-to-r from-sky-500 to-indigo-500 text-white hover:bg-sky-500 hover:bg-gradient-to-r hover:from-violet-500 hover:hover:to-indigo-500 transition-all ease-in duration-200'
       }`}
     >
       <Link href={`${urlLink}`}>
-        <div className="flex flex-row justify-center items-center gap-2">
-          <a>{title}</a>
+        <div className="flex flex-row items-center justify-between w-full">
+          <a className="font-bold text-sm">{title}</a>
           <div>
             <ArrowCircleRightIcon className="w-8 h-8" />
           </div>
